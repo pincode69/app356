@@ -12,6 +12,15 @@
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FA44657D9705B6E76FCB9247 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		0636E4E0E7D54EB4B488D0B2 /* Fredoka-VariableFont_wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E45DBE9316D4591AD9FDB7C /* Fredoka-VariableFont_wdth,wght.ttf */; };
+		0D26C24C117F488A9A581C9C /* Hanalei-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF8222A9478B468DA7ED7245 /* Hanalei-Regular.ttf */; };
+		6DBF7DB4B19A40F1A8C9B0EF /* Knewave-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD5893DABE974DA5B2E733B6 /* Knewave-Regular.ttf */; };
+		369A4AE2243442B2B235CBD7 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B4F0877DB70F4C018924989E /* bg.png */; };
+		C72115CA41134CB2A4178310 /* cactus-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 347D72781E684066A7952BE6 /* cactus-1.png */; };
+		5CC471FCB0E94523920C17BE /* cactus-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2474227F6A3F41E2B1D10E71 /* cactus-2.png */; };
+		EBFA2B1B9CAB4381AE9EE392 /* cactus-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDBF466291A4A11AB8C1027 /* cactus-3.png */; };
+		8C59AE6F972C41E5AA8A026E /* cactus-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 379FBE44A19B4187BE8C3208 /* cactus-4.png */; };
+		49E4BFD4B8D9449DB67B2647 /* running-camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C05202B47455C8BE70A38 /* running-camel.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +34,15 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = TreasuresOfEgypt/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TreasuresOfEgypt/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2E45DBE9316D4591AD9FDB7C /* Fredoka-VariableFont_wdth,wght.ttf */ = {isa = PBXFileReference; name = "Fredoka-VariableFont_wdth,wght.ttf"; path = "../assets/fonts/Fredoka-VariableFont_wdth,wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF8222A9478B468DA7ED7245 /* Hanalei-Regular.ttf */ = {isa = PBXFileReference; name = "Hanalei-Regular.ttf"; path = "../assets/fonts/Hanalei-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BD5893DABE974DA5B2E733B6 /* Knewave-Regular.ttf */ = {isa = PBXFileReference; name = "Knewave-Regular.ttf"; path = "../assets/fonts/Knewave-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4F0877DB70F4C018924989E /* bg.png */ = {isa = PBXFileReference; name = "bg.png"; path = "../assets/images/bg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		347D72781E684066A7952BE6 /* cactus-1.png */ = {isa = PBXFileReference; name = "cactus-1.png"; path = "../assets/images/game/cactus-1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2474227F6A3F41E2B1D10E71 /* cactus-2.png */ = {isa = PBXFileReference; name = "cactus-2.png"; path = "../assets/images/game/cactus-2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCDBF466291A4A11AB8C1027 /* cactus-3.png */ = {isa = PBXFileReference; name = "cactus-3.png"; path = "../assets/images/game/cactus-3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		379FBE44A19B4187BE8C3208 /* cactus-4.png */ = {isa = PBXFileReference; name = "cactus-4.png"; path = "../assets/images/game/cactus-4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0E1C05202B47455C8BE70A38 /* running-camel.gif */ = {isa = PBXFileReference; name = "running-camel.gif"; path = "../assets/images/game/running-camel.gif"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +93,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				BBDC760690BD4CB58CA9BA1C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -97,6 +116,23 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		BBDC760690BD4CB58CA9BA1C /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				2E45DBE9316D4591AD9FDB7C /* Fredoka-VariableFont_wdth,wght.ttf */,
+				DF8222A9478B468DA7ED7245 /* Hanalei-Regular.ttf */,
+				BD5893DABE974DA5B2E733B6 /* Knewave-Regular.ttf */,
+				B4F0877DB70F4C018924989E /* bg.png */,
+				347D72781E684066A7952BE6 /* cactus-1.png */,
+				2474227F6A3F41E2B1D10E71 /* cactus-2.png */,
+				BCDBF466291A4A11AB8C1027 /* cactus-3.png */,
+				379FBE44A19B4187BE8C3208 /* cactus-4.png */,
+				0E1C05202B47455C8BE70A38 /* running-camel.gif */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -161,6 +197,15 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				FA44657D9705B6E76FCB9247 /* PrivacyInfo.xcprivacy in Resources */,
+				0636E4E0E7D54EB4B488D0B2 /* Fredoka-VariableFont_wdth,wght.ttf in Resources */,
+				0D26C24C117F488A9A581C9C /* Hanalei-Regular.ttf in Resources */,
+				6DBF7DB4B19A40F1A8C9B0EF /* Knewave-Regular.ttf in Resources */,
+				369A4AE2243442B2B235CBD7 /* bg.png in Resources */,
+				C72115CA41134CB2A4178310 /* cactus-1.png in Resources */,
+				5CC471FCB0E94523920C17BE /* cactus-2.png in Resources */,
+				EBFA2B1B9CAB4381AE9EE392 /* cactus-3.png in Resources */,
+				8C59AE6F972C41E5AA8A026E /* cactus-4.png in Resources */,
+				49E4BFD4B8D9449DB67B2647 /* running-camel.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

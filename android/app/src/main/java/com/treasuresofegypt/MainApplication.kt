@@ -1,5 +1,7 @@
 package com.treasuresofegypt
 
+import com.facebook.react.common.assets.ReactFontManager
+
 import android.app.Application
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
@@ -22,6 +24,9 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+    ReactFontManager.getInstance().addCustomFont(this, "Knewave", R.font.knewave)
+    ReactFontManager.getInstance().addCustomFont(this, "Hanalei", R.font.hanalei)
+    ReactFontManager.getInstance().addCustomFont(this, "Fredoka", R.font.fredoka)
     loadReactNative(this)
   }
 }
