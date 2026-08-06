@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
   },
   motivationSubtext: {
     fontSize: 16,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#3e2105ff',
     textAlign: 'center',
     lineHeight: 24,
@@ -197,16 +197,15 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.5,
     shadowRadius: 8,
-    elevation: 8,
+    // elevation: 8,
     justifyContent: 'space-between'
   },
   startButtonText: {
     flex: 1,
     flexShrink: 1,
     fontSize: 20,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#FFE777',
     textTransform: 'uppercase',
-    fontWeight: 'bold',
   },
 });

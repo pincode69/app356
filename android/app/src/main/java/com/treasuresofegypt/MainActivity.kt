@@ -1,4 +1,4 @@
-package com.treasuresofegypt
+package com.treasuresofegypt.bookofdesert.thegodisra
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
