@@ -2,6 +2,12 @@
   xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <queries>
+      <intent>
+        <action android:name="android.support.customtabs.action.CustomTabsService" />
+      </intent>
+      <package android:name="com.android.chrome" />
+    </queries>
 
     <application
       android:name=".MainApplication"

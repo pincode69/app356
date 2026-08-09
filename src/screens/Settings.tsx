@@ -321,7 +321,7 @@ const styles = StyleSheet.create({
   },
   dangerButtonText: {
     fontSize: 16,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#ff4d4d',
     letterSpacing: 1,
     textShadowColor: 'rgba(0, 0, 0, 0.7)',

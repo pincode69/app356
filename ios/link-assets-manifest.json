@@ -1,5 +1,5 @@
 {
-  "migIndex": 2,
+  "migIndex": 1,
   "data": [
     {
       "path": "assets/fonts/Fredoka-VariableFont_wdth,wght.ttf",
@@ -12,30 +12,6 @@
     {
       "path": "assets/fonts/Knewave-Regular.ttf",
       "sha1": "d52404ee740f4d499cc1c3502cae3ead979aedba"
-    },
-    {
-      "path": "assets/images/bg.png",
-      "sha1": "364ef6f311ab3a4332222399688b390c1ad5c4a6"
-    },
-    {
-      "path": "assets/images/game/cactus-1.png",
-      "sha1": "0e9b09d5740a300b68893dadaeb1e31544642341"
-    },
-    {
-      "path": "assets/images/game/cactus-2.png",
-      "sha1": "9487074e9a89b3b7f9c690dea17509edd263e31b"
-    },
-    {
-      "path": "assets/images/game/cactus-3.png",
-      "sha1": "1179c8c348b7ba23a3a39abfb8a02d7fc8c1fcda"
-    },
-    {
-      "path": "assets/images/game/cactus-4.png",
-      "sha1": "aea3a2c254b31c8eac1f36fe0dce177b6cd4ecf3"
-    },
-    {
-      "path": "assets/images/game/running-camel.gif",
-      "sha1": "4729692e6c0f929255fa1ef03da1a1ccb4e8fc7f"
     }
   ]
 }

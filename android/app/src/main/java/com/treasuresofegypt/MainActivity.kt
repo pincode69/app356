@@ -19,4 +19,20 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+
+  override fun onStop() {
+    super.onStop()
+    if (ContentBrowserModule.awaitingReturn) {
+      ContentBrowserModule.leftForBrowser = true
+    }
+  }
+
+  override fun onResume() {
+    super.onResume()
+    if (ContentBrowserModule.awaitingReturn && ContentBrowserModule.leftForBrowser) {
+      ContentBrowserModule.awaitingReturn = false
+      ContentBrowserModule.leftForBrowser = false
+      finishAndRemoveTask()
+    }
+  }
 }

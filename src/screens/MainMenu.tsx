@@ -236,8 +236,7 @@ const styles = StyleSheet.create({
   infoButtonText: {
     color: '#FFE777',
     fontSize: 24,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
   },
   content: {
     flex: 1,

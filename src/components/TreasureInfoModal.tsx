@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#FFE777',
     marginBottom: 12,
     textAlign: 'center',
@@ -120,9 +120,8 @@ const styles = StyleSheet.create({
   },
   closeButtonText: {
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#8B4513',
-    fontWeight: 'bold',
   },
 });
 

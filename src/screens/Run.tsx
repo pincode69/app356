@@ -558,14 +558,12 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: '#8B4513',
   },
   turboButtonText: {
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: '#FFFFFF',
   },
   modalOverlay: {
@@ -591,8 +589,7 @@ const styles = StyleSheet.create({
   gameOverText: {
     width: '100%',
     fontSize: 42,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: '#FFE777',
     marginBottom: 16,
     textAlign: 'center',
@@ -650,8 +647,7 @@ const styles = StyleSheet.create({
   restartButtonText: {
     color: '#8B4513',
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
   },
   homeButton: {
     backgroundColor: 'rgba(139, 90, 43, 0.8)',
@@ -666,7 +662,6 @@ const styles = StyleSheet.create({
   homeButtonText: {
     color: '#FFE777',
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
   },
 });

@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   motivationText: {
     fontSize: 17,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#FFE777',
     lineHeight: 26,
     marginTop: 16,

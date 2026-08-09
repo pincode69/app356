@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
   },
   treasureName: {
     fontSize: 14,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#FFE777',
     textAlign: 'center',
     textShadowColor: 'rgba(0, 0, 0, 0.7)',
@@ -310,8 +310,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     width: '100%',
     textAlign: 'center',
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: 'white',
   },
   priceContainer: {
@@ -325,8 +324,7 @@ const styles = StyleSheet.create({
   },
   priceText: {
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: '#FFE777',
   },
   priceTextDisabled: {
@@ -349,8 +347,7 @@ const styles = StyleSheet.create({
   buyButtonText: {
     color: '#8B4513',
     fontSize: 14,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
   },
   buyButtonTextDisabled: {
     color: '#CCCCCC',

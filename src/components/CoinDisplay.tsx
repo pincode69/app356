@@ -40,9 +40,8 @@ const styles = StyleSheet.create({
   },
   coinText: {
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#FFE777',
-    fontWeight: 'bold',
   },
 });
 

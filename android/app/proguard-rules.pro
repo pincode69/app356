@@ -39,21 +39,20 @@
 -keep class okhttp3.** { *; }
 -keep class okio.** { *; }
 
-# --- AppsFlyer ---
--keep class com.appsflyer.** { *; }
--dontwarn com.appsflyer.**
-
-# --- Amplitude ---
--keep class com.amplitude.** { *; }
--dontwarn com.amplitude.**
-
-# --- react-native-webview ---
--keep class com.reactnativecommunity.webview.** { *; }
--dontwarn com.reactnativecommunity.webview.**
-# Keep any @JavascriptInterface bridges
--keepclassmembers class * {
-    @android.webkit.JavascriptInterface <methods>;
+# --- App entrypoints / ContentBrowser CCT ---
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.MainActivity { *; }
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.MainApplication { *; }
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.ContentBrowser* { *; }
+-keepclassmembers class com.treasuresofegypt.bookofdesert.thegodisra.ContentBrowserModule {
+    public static <fields>;
 }
+-keep class androidx.browser.** { *; }
+-dontwarn androidx.browser.**
+
+# --- Fresco animated GIF (running-camel.gif etc.) ---
+-keep class com.facebook.animated.gif.** { *; }
+-keep class com.facebook.imagepipeline.animated.** { *; }
+-dontwarn com.facebook.animated.gif.**
 
 # --- AsyncStorage ---
 -keep class com.reactnativecommunity.asyncstorage.** { *; }
@@ -62,3 +61,23 @@
 # --- react-native-safe-area-context ---
 -keep class com.th3rdwave.safeareacontext.** { *; }
 -dontwarn com.th3rdwave.safeareacontext.**
+
+# --- react-native-screens ---
+-keep class com.swmansion.rnscreens.** { *; }
+-dontwarn com.swmansion.rnscreens.**
+
+# --- react-native-reanimated / worklets / Fabric ---
+-keep class com.swmansion.reanimated.** { *; }
+-dontwarn com.swmansion.reanimated.**
+-keep class com.swmansion.worklets.** { *; }
+-dontwarn com.swmansion.worklets.**
+-keep class com.facebook.react.fabric.** { *; }
+
+# --- react-native-svg ---
+-keep class com.horcrux.svg.** { *; }
+-dontwarn com.horcrux.svg.**
+
+# --- Kotlin ---
+-keepattributes RuntimeVisibleAnnotations,AnnotationDefault
+-dontwarn kotlin.**
+-dontwarn kotlinx.**

@@ -21,6 +21,43 @@
 		EBFA2B1B9CAB4381AE9EE392 /* cactus-3.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDBF466291A4A11AB8C1027 /* cactus-3.png */; };
 		8C59AE6F972C41E5AA8A026E /* cactus-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 379FBE44A19B4187BE8C3208 /* cactus-4.png */; };
 		49E4BFD4B8D9449DB67B2647 /* running-camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0E1C05202B47455C8BE70A38 /* running-camel.gif */; };
+		14D5373219D7464CB3D841A3 /* design-icon-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D052F350304288B6E478F5 /* design-icon-3.png */; };
+		6D1682586BBA41B6AA662FB5 /* design-icon-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A32FE6C0E84979AB01D126 /* design-icon-2.png */; };
+		07A7DD6C50754B40AD19A20D /* launch-decor-coins.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A366D3774E348D9BFF543E6 /* launch-decor-coins.png */; };
+		147C77C9DEC94EBEB3A68BEC /* design-icon-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC85570BF9744D2A372AD7F /* design-icon-1.png */; };
+		36ED357D21DA4DFBB8E3DBAF /* Bonus-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AC2FF1B8B1D4B1EB1BD176D /* Bonus-1.png */; };
+		5C31D856C9FA4DDE9E81B481 /* Bonus-2.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD613722F644FD29D5F96D8 /* Bonus-2.png */; };
+		34A663B1D3364B689ED546B0 /* Bonus-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 320B205694624751BB8F02FB /* Bonus-3.png */; };
+		87CF930627D34612A1D038A8 /* Bonus-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A47C7D3F3B7470B90BB4E38 /* Bonus-4.png */; };
+		0208905142F44FD4BEF8CB39 /* Bonus-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE0C03AC4FB47C5A05B0374 /* Bonus-5.png */; };
+		002F3E681E8E41329A53BE70 /* history-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B82BAEF71D914884960BBC13 /* history-1.png */; };
+		F9D10068F1CA4655A8D3F318 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 95992A2514BC43E0BA47D466 /* history.png */; };
+		71456DE76AF74897B49ADAEC /* launch-decor-treasures.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C448CF685B849CBAD70FC3C /* launch-decor-treasures.png */; };
+		30D39AF9BA76435CB97391D8 /* Sphinx-Statue.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A9232C49144A53A968F745 /* Sphinx-Statue.png */; };
+		C679D2759EC34B52BEADE55E /* Mummy-Bandage.png in Resources */ = {isa = PBXBuildFile; fileRef = 380DEF1A242B4E788E4E993D /* Mummy-Bandage.png */; };
+		8DCB4C0210B94A34B8F36A2E /* Golden-Scarab.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D16A7884B34678B13FD287 /* Golden-Scarab.png */; };
+		93D63632CC84427DB7FB561F /* Papyrus-Scroll.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EDEDCCB1764D55B960BE05 /* Papyrus-Scroll.png */; };
+		AFD465D02CBC45A6BE2422DE /* Golden-Chariot.png in Resources */ = {isa = PBXBuildFile; fileRef = 603A0294F6FB49ACAACB2A83 /* Golden-Chariot.png */; };
+		6F2BA21A04FA4BB7AE4D2E4E /* Eye-Of-Horus.png in Resources */ = {isa = PBXBuildFile; fileRef = 08093C2B00CB4CF1B13ADD40 /* Eye-Of-Horus.png */; };
+		84BE255D60914AACA7712AD7 /* Sarcophagus.png in Resources */ = {isa = PBXBuildFile; fileRef = A6EE1CE48BA34640B659D137 /* Sarcophagus.png */; };
+		47056F511F0D48FC99DEF2E3 /* Hieroglyph-Tablet.png in Resources */ = {isa = PBXBuildFile; fileRef = 55D2BC629B764BE7B5DF721D /* Hieroglyph-Tablet.png */; };
+		9D7ECC18AAEB4DE6A30A06FE /* Desert-Rose.png in Resources */ = {isa = PBXBuildFile; fileRef = 845FDB83FDDF42DBA3101406 /* Desert-Rose.png */; };
+		D9AEA7A86C9B4BF9949972B8 /* Obelisk-Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E1C77123AF4A58B0330AB8 /* Obelisk-Fragment.png */; };
+		7D0FD5843C4746A783E713E8 /* Hawk-Feather.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B72DB6448F8447AA60F305A /* Hawk-Feather.png */; };
+		D1921E81A539457F9029BA52 /* Cobra-Staff.png in Resources */ = {isa = PBXBuildFile; fileRef = A77E086506BD40799C718232 /* Cobra-Staff.png */; };
+		2A32C8621C514A7CA5DA0760 /* Pyramid-Stone.png in Resources */ = {isa = PBXBuildFile; fileRef = E401F306E5E04D10800C89DC /* Pyramid-Stone.png */; };
+		A4D6CD2A56C54EACAAEAA040 /* Lotus-Flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB1A7809FC4178814A3006 /* Lotus-Flower.png */; };
+		74DD236692BD4100BF9923C3 /* Desert-Oasis.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBC219754C54194AEF76C7B /* Desert-Oasis.png */; };
+		189DAA3D0BDA444DAB873843 /* Golden-Mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D8BE8D283BB4B5CA41CD820 /* Golden-Mask.png */; };
+		116CB89C320049408E7DF7D8 /* Sacred-Cat.png in Resources */ = {isa = PBXBuildFile; fileRef = A0DC2B1D71D64F7C9DEC0102 /* Sacred-Cat.png */; };
+		F20C5B1151BC449E81746546 /* Crocodile-Scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 414C6DCB64D44C58944D4828 /* Crocodile-Scale.png */; };
+		5912FCFFD6754391800D6D6F /* Book-Of-The-Dead.png in Resources */ = {isa = PBXBuildFile; fileRef = 2032F0DC391F47F1BCC22D99 /* Book-Of-The-Dead.png */; };
+		45EC0DDCB32B4B32AAF20EBE /* Canopic-Jar.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F76D137EC344B488D86211 /* Canopic-Jar.png */; };
+		E627022984A34962909E79E4 /* Solar-Disc.png in Resources */ = {isa = PBXBuildFile; fileRef = C94096E480F748958A06E902 /* Solar-Disc.png */; };
+		5A5819E09E4244C5B6732C25 /* Pharaoh-Crown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C4A6A29AFC141F780B83361 /* Pharaoh-Crown.png */; };
+		B89FEE1C2D9B4FB2BFF0B78C /* Ankh-Cross.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEC1C012F314BEC94BBBDA2 /* Ankh-Cross.png */; };
+		87904B5CCF7045A79BD38671 /* Nile-Water.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DC3216A414416A2B81412 /* Nile-Water.png */; };
+		D5ACF0EA213F4DE891B83CDB /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 93DF5B62152D406CBE396983 /* coin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +80,43 @@
 		BCDBF466291A4A11AB8C1027 /* cactus-3.png */ = {isa = PBXFileReference; name = "cactus-3.png"; path = "../assets/images/game/cactus-3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		379FBE44A19B4187BE8C3208 /* cactus-4.png */ = {isa = PBXFileReference; name = "cactus-4.png"; path = "../assets/images/game/cactus-4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0E1C05202B47455C8BE70A38 /* running-camel.gif */ = {isa = PBXFileReference; name = "running-camel.gif"; path = "../assets/images/game/running-camel.gif"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		66D052F350304288B6E478F5 /* design-icon-3.png */ = {isa = PBXFileReference; name = "design-icon-3.png"; path = "../assets/images/design-icon-3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		06A32FE6C0E84979AB01D126 /* design-icon-2.png */ = {isa = PBXFileReference; name = "design-icon-2.png"; path = "../assets/images/design-icon-2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5A366D3774E348D9BFF543E6 /* launch-decor-coins.png */ = {isa = PBXFileReference; name = "launch-decor-coins.png"; path = "../assets/images/launch-decor-coins.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BAC85570BF9744D2A372AD7F /* design-icon-1.png */ = {isa = PBXFileReference; name = "design-icon-1.png"; path = "../assets/images/design-icon-1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7AC2FF1B8B1D4B1EB1BD176D /* Bonus-1.png */ = {isa = PBXFileReference; name = "Bonus-1.png"; path = "../assets/images/game/bonus/Bonus-1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FDD613722F644FD29D5F96D8 /* Bonus-2.png */ = {isa = PBXFileReference; name = "Bonus-2.png"; path = "../assets/images/game/bonus/Bonus-2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		320B205694624751BB8F02FB /* Bonus-3.png */ = {isa = PBXFileReference; name = "Bonus-3.png"; path = "../assets/images/game/bonus/Bonus-3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9A47C7D3F3B7470B90BB4E38 /* Bonus-4.png */ = {isa = PBXFileReference; name = "Bonus-4.png"; path = "../assets/images/game/bonus/Bonus-4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4CE0C03AC4FB47C5A05B0374 /* Bonus-5.png */ = {isa = PBXFileReference; name = "Bonus-5.png"; path = "../assets/images/game/bonus/Bonus-5.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B82BAEF71D914884960BBC13 /* history-1.png */ = {isa = PBXFileReference; name = "history-1.png"; path = "../assets/images/history-1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		95992A2514BC43E0BA47D466 /* history.png */ = {isa = PBXFileReference; name = "history.png"; path = "../assets/images/history.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4C448CF685B849CBAD70FC3C /* launch-decor-treasures.png */ = {isa = PBXFileReference; name = "launch-decor-treasures.png"; path = "../assets/images/launch-decor-treasures.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54A9232C49144A53A968F745 /* Sphinx-Statue.png */ = {isa = PBXFileReference; name = "Sphinx-Statue.png"; path = "../assets/images/treasures/Sphinx-Statue.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		380DEF1A242B4E788E4E993D /* Mummy-Bandage.png */ = {isa = PBXFileReference; name = "Mummy-Bandage.png"; path = "../assets/images/treasures/Mummy-Bandage.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		00D16A7884B34678B13FD287 /* Golden-Scarab.png */ = {isa = PBXFileReference; name = "Golden-Scarab.png"; path = "../assets/images/treasures/Golden-Scarab.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E1EDEDCCB1764D55B960BE05 /* Papyrus-Scroll.png */ = {isa = PBXFileReference; name = "Papyrus-Scroll.png"; path = "../assets/images/treasures/Papyrus-Scroll.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		603A0294F6FB49ACAACB2A83 /* Golden-Chariot.png */ = {isa = PBXFileReference; name = "Golden-Chariot.png"; path = "../assets/images/treasures/Golden-Chariot.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		08093C2B00CB4CF1B13ADD40 /* Eye-Of-Horus.png */ = {isa = PBXFileReference; name = "Eye-Of-Horus.png"; path = "../assets/images/treasures/Eye-Of-Horus.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6EE1CE48BA34640B659D137 /* Sarcophagus.png */ = {isa = PBXFileReference; name = "Sarcophagus.png"; path = "../assets/images/treasures/Sarcophagus.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		55D2BC629B764BE7B5DF721D /* Hieroglyph-Tablet.png */ = {isa = PBXFileReference; name = "Hieroglyph-Tablet.png"; path = "../assets/images/treasures/Hieroglyph-Tablet.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		845FDB83FDDF42DBA3101406 /* Desert-Rose.png */ = {isa = PBXFileReference; name = "Desert-Rose.png"; path = "../assets/images/treasures/Desert-Rose.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		87E1C77123AF4A58B0330AB8 /* Obelisk-Fragment.png */ = {isa = PBXFileReference; name = "Obelisk-Fragment.png"; path = "../assets/images/treasures/Obelisk-Fragment.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4B72DB6448F8447AA60F305A /* Hawk-Feather.png */ = {isa = PBXFileReference; name = "Hawk-Feather.png"; path = "../assets/images/treasures/Hawk-Feather.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A77E086506BD40799C718232 /* Cobra-Staff.png */ = {isa = PBXFileReference; name = "Cobra-Staff.png"; path = "../assets/images/treasures/Cobra-Staff.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E401F306E5E04D10800C89DC /* Pyramid-Stone.png */ = {isa = PBXFileReference; name = "Pyramid-Stone.png"; path = "../assets/images/treasures/Pyramid-Stone.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9DDB1A7809FC4178814A3006 /* Lotus-Flower.png */ = {isa = PBXFileReference; name = "Lotus-Flower.png"; path = "../assets/images/treasures/Lotus-Flower.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EEBC219754C54194AEF76C7B /* Desert-Oasis.png */ = {isa = PBXFileReference; name = "Desert-Oasis.png"; path = "../assets/images/treasures/Desert-Oasis.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D8BE8D283BB4B5CA41CD820 /* Golden-Mask.png */ = {isa = PBXFileReference; name = "Golden-Mask.png"; path = "../assets/images/treasures/Golden-Mask.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0DC2B1D71D64F7C9DEC0102 /* Sacred-Cat.png */ = {isa = PBXFileReference; name = "Sacred-Cat.png"; path = "../assets/images/treasures/Sacred-Cat.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		414C6DCB64D44C58944D4828 /* Crocodile-Scale.png */ = {isa = PBXFileReference; name = "Crocodile-Scale.png"; path = "../assets/images/treasures/Crocodile-Scale.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2032F0DC391F47F1BCC22D99 /* Book-Of-The-Dead.png */ = {isa = PBXFileReference; name = "Book-Of-The-Dead.png"; path = "../assets/images/treasures/Book-Of-The-Dead.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41F76D137EC344B488D86211 /* Canopic-Jar.png */ = {isa = PBXFileReference; name = "Canopic-Jar.png"; path = "../assets/images/treasures/Canopic-Jar.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C94096E480F748958A06E902 /* Solar-Disc.png */ = {isa = PBXFileReference; name = "Solar-Disc.png"; path = "../assets/images/treasures/Solar-Disc.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1C4A6A29AFC141F780B83361 /* Pharaoh-Crown.png */ = {isa = PBXFileReference; name = "Pharaoh-Crown.png"; path = "../assets/images/treasures/Pharaoh-Crown.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FAEC1C012F314BEC94BBBDA2 /* Ankh-Cross.png */ = {isa = PBXFileReference; name = "Ankh-Cross.png"; path = "../assets/images/treasures/Ankh-Cross.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		434DC3216A414416A2B81412 /* Nile-Water.png */ = {isa = PBXFileReference; name = "Nile-Water.png"; path = "../assets/images/treasures/Nile-Water.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		93DF5B62152D406CBE396983 /* coin.png */ = {isa = PBXFileReference; name = "coin.png"; path = "../assets/images/coin.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +203,43 @@
 				BCDBF466291A4A11AB8C1027 /* cactus-3.png */,
 				379FBE44A19B4187BE8C3208 /* cactus-4.png */,
 				0E1C05202B47455C8BE70A38 /* running-camel.gif */,
+				66D052F350304288B6E478F5 /* design-icon-3.png */,
+				06A32FE6C0E84979AB01D126 /* design-icon-2.png */,
+				5A366D3774E348D9BFF543E6 /* launch-decor-coins.png */,
+				BAC85570BF9744D2A372AD7F /* design-icon-1.png */,
+				7AC2FF1B8B1D4B1EB1BD176D /* Bonus-1.png */,
+				FDD613722F644FD29D5F96D8 /* Bonus-2.png */,
+				320B205694624751BB8F02FB /* Bonus-3.png */,
+				9A47C7D3F3B7470B90BB4E38 /* Bonus-4.png */,
+				4CE0C03AC4FB47C5A05B0374 /* Bonus-5.png */,
+				B82BAEF71D914884960BBC13 /* history-1.png */,
+				95992A2514BC43E0BA47D466 /* history.png */,
+				4C448CF685B849CBAD70FC3C /* launch-decor-treasures.png */,
+				54A9232C49144A53A968F745 /* Sphinx-Statue.png */,
+				380DEF1A242B4E788E4E993D /* Mummy-Bandage.png */,
+				00D16A7884B34678B13FD287 /* Golden-Scarab.png */,
+				E1EDEDCCB1764D55B960BE05 /* Papyrus-Scroll.png */,
+				603A0294F6FB49ACAACB2A83 /* Golden-Chariot.png */,
+				08093C2B00CB4CF1B13ADD40 /* Eye-Of-Horus.png */,
+				A6EE1CE48BA34640B659D137 /* Sarcophagus.png */,
+				55D2BC629B764BE7B5DF721D /* Hieroglyph-Tablet.png */,
+				845FDB83FDDF42DBA3101406 /* Desert-Rose.png */,
+				87E1C77123AF4A58B0330AB8 /* Obelisk-Fragment.png */,
+				4B72DB6448F8447AA60F305A /* Hawk-Feather.png */,
+				A77E086506BD40799C718232 /* Cobra-Staff.png */,
+				E401F306E5E04D10800C89DC /* Pyramid-Stone.png */,
+				9DDB1A7809FC4178814A3006 /* Lotus-Flower.png */,
+				EEBC219754C54194AEF76C7B /* Desert-Oasis.png */,
+				7D8BE8D283BB4B5CA41CD820 /* Golden-Mask.png */,
+				A0DC2B1D71D64F7C9DEC0102 /* Sacred-Cat.png */,
+				414C6DCB64D44C58944D4828 /* Crocodile-Scale.png */,
+				2032F0DC391F47F1BCC22D99 /* Book-Of-The-Dead.png */,
+				41F76D137EC344B488D86211 /* Canopic-Jar.png */,
+				C94096E480F748958A06E902 /* Solar-Disc.png */,
+				1C4A6A29AFC141F780B83361 /* Pharaoh-Crown.png */,
+				FAEC1C012F314BEC94BBBDA2 /* Ankh-Cross.png */,
+				434DC3216A414416A2B81412 /* Nile-Water.png */,
+				93DF5B62152D406CBE396983 /* coin.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -206,6 +317,43 @@
 				EBFA2B1B9CAB4381AE9EE392 /* cactus-3.png in Resources */,
 				8C59AE6F972C41E5AA8A026E /* cactus-4.png in Resources */,
 				49E4BFD4B8D9449DB67B2647 /* running-camel.gif in Resources */,
+				14D5373219D7464CB3D841A3 /* design-icon-3.png in Resources */,
+				6D1682586BBA41B6AA662FB5 /* design-icon-2.png in Resources */,
+				07A7DD6C50754B40AD19A20D /* launch-decor-coins.png in Resources */,
+				147C77C9DEC94EBEB3A68BEC /* design-icon-1.png in Resources */,
+				36ED357D21DA4DFBB8E3DBAF /* Bonus-1.png in Resources */,
+				5C31D856C9FA4DDE9E81B481 /* Bonus-2.png in Resources */,
+				34A663B1D3364B689ED546B0 /* Bonus-3.png in Resources */,
+				87CF930627D34612A1D038A8 /* Bonus-4.png in Resources */,
+				0208905142F44FD4BEF8CB39 /* Bonus-5.png in Resources */,
+				002F3E681E8E41329A53BE70 /* history-1.png in Resources */,
+				F9D10068F1CA4655A8D3F318 /* history.png in Resources */,
+				71456DE76AF74897B49ADAEC /* launch-decor-treasures.png in Resources */,
+				30D39AF9BA76435CB97391D8 /* Sphinx-Statue.png in Resources */,
+				C679D2759EC34B52BEADE55E /* Mummy-Bandage.png in Resources */,
+				8DCB4C0210B94A34B8F36A2E /* Golden-Scarab.png in Resources */,
+				93D63632CC84427DB7FB561F /* Papyrus-Scroll.png in Resources */,
+				AFD465D02CBC45A6BE2422DE /* Golden-Chariot.png in Resources */,
+				6F2BA21A04FA4BB7AE4D2E4E /* Eye-Of-Horus.png in Resources */,
+				84BE255D60914AACA7712AD7 /* Sarcophagus.png in Resources */,
+				47056F511F0D48FC99DEF2E3 /* Hieroglyph-Tablet.png in Resources */,
+				9D7ECC18AAEB4DE6A30A06FE /* Desert-Rose.png in Resources */,
+				D9AEA7A86C9B4BF9949972B8 /* Obelisk-Fragment.png in Resources */,
+				7D0FD5843C4746A783E713E8 /* Hawk-Feather.png in Resources */,
+				D1921E81A539457F9029BA52 /* Cobra-Staff.png in Resources */,
+				2A32C8621C514A7CA5DA0760 /* Pyramid-Stone.png in Resources */,
+				A4D6CD2A56C54EACAAEAA040 /* Lotus-Flower.png in Resources */,
+				74DD236692BD4100BF9923C3 /* Desert-Oasis.png in Resources */,
+				189DAA3D0BDA444DAB873843 /* Golden-Mask.png in Resources */,
+				116CB89C320049408E7DF7D8 /* Sacred-Cat.png in Resources */,
+				F20C5B1151BC449E81746546 /* Crocodile-Scale.png in Resources */,
+				5912FCFFD6754391800D6D6F /* Book-Of-The-Dead.png in Resources */,
+				45EC0DDCB32B4B32AAF20EBE /* Canopic-Jar.png in Resources */,
+				E627022984A34962909E79E4 /* Solar-Disc.png in Resources */,
+				5A5819E09E4244C5B6732C25 /* Pharaoh-Crown.png in Resources */,
+				B89FEE1C2D9B4FB2BFF0B78C /* Ankh-Cross.png in Resources */,
+				87904B5CCF7045A79BD38671 /* Nile-Water.png in Resources */,
+				D5ACF0EA213F4DE891B83CDB /* coin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

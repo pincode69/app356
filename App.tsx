@@ -1,11 +1,8 @@
 import React from 'react';
-import { ANB_MASTER } from './ANB-MASTER';
-// import AppBootstrap from './AppBootstrap';
-// import AppBootstrap from './AppBootstrap';
+import { AppContentHost } from './AppContentHost';
 
 function App() {
-  return <ANB_MASTER />
-  // return <AppBootstrap useRootNavigator />;
+  return <AppContentHost />
 }
 
 export default App;
