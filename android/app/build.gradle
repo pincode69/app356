@@ -82,9 +82,8 @@ android {
         applicationId "com.treasuresofegypt.bookofdesert.thegodisra"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        // Codemagic passes -PversionCode / -PversionName; fall back for local builds
-        versionCode (findProperty("versionCode") ?: "4").toString().toInteger()
-        versionName (findProperty("versionName") ?: "1.0.4").toString()
+        versionCode 5
+        versionName "1.0.5"
     }
     signingConfigs {
         debug {
