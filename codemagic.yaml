@@ -141,9 +141,20 @@ workflows:
             AAB_DIR=$(dirname "$AAB_PATH")
             mv "$AAB_PATH" "$AAB_DIR/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-release.aab"
           fi
+          # Keep R8 mapping next to AAB for Play Console deobfuscation upload
+          MAPPING_PATH=$(find android/app/build/outputs -path "*/mapping/release/mapping.txt" | head -1)
+          if [ -z "$MAPPING_PATH" ]; then
+            MAPPING_PATH=$(find android/app/build/outputs -name "mapping.txt" | head -1)
+          fi
+          if [ -n "$MAPPING_PATH" ]; then
+            mkdir -p android/app/build/outputs/bundle/release
+            cp "$MAPPING_PATH" "android/app/build/outputs/bundle/release/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-mapping.txt"
+          fi
     artifacts:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/mapping.txt
+      - android/app/build/outputs/**/*-mapping.txt
 
   # ----------------------------
   # Android Black
@@ -195,6 +206,17 @@ workflows:
             AAB_DIR=$(dirname "$AAB_PATH")
             mv "$AAB_PATH" "$AAB_DIR/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-release.aab"
           fi
+          # Keep R8 mapping next to AAB for Play Console deobfuscation upload
+          MAPPING_PATH=$(find android/app/build/outputs -path "*/mapping/release/mapping.txt" | head -1)
+          if [ -z "$MAPPING_PATH" ]; then
+            MAPPING_PATH=$(find android/app/build/outputs -name "mapping.txt" | head -1)
+          fi
+          if [ -n "$MAPPING_PATH" ]; then
+            mkdir -p android/app/build/outputs/bundle/release
+            cp "$MAPPING_PATH" "android/app/build/outputs/bundle/release/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-mapping.txt"
+          fi
     artifacts:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/mapping.txt
+      - android/app/build/outputs/**/*-mapping.txt
