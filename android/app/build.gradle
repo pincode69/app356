@@ -72,6 +72,22 @@ def enableProguardInReleaseBuilds = true
  */
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
+// Codemagic: -PversionCode=$BUILD_NUMBER -PversionName=1.0.$BUILD_NUMBER
+def appVersionCode = 5
+def appVersionName = "1.0.5"
+if (project.hasProperty("versionCode") && project.property("versionCode") != null) {
+    def rawCode = project.property("versionCode").toString().trim()
+    if (!rawCode.isEmpty()) {
+        appVersionCode = rawCode.toInteger()
+    }
+}
+if (project.hasProperty("versionName") && project.property("versionName") != null) {
+    def rawName = project.property("versionName").toString().trim()
+    if (!rawName.isEmpty()) {
+        appVersionName = rawName
+    }
+}
+
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -82,8 +98,8 @@ android {
         applicationId "com.treasuresofegypt.bookofdesert.thegodisra"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "1.0.5"
+        versionCode appVersionCode
+        versionName appVersionName
     }
     signingConfigs {
         debug {

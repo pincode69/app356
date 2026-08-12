@@ -1,6 +1,5 @@
 # Project ProGuard / R8 rules for TreasuresOfEgypt.
-# Applied when minifyEnabled=true. Does NOT auto-upload mapping to Play Console —
-# you must upload mapping.txt with the AAB to clear the deobfuscation warning.
+# Upload mapping.txt with the AAB in Play Console to clear the deobfuscation warning.
 
 # --- Crash reports: keep line numbers ---
 -keepattributes SourceFile,LineNumberTable
@@ -37,7 +36,7 @@
 -keep class okio.** { *; }
 -keep class sun.misc.Unsafe { *; }
 
-# --- App entrypoints (must match applicationId / namespace) ---
+# --- App entrypoints ---
 -keep class com.treasuresofegypt.bookofdesert.thegodisra.MainActivity { *; }
 -keep class com.treasuresofegypt.bookofdesert.thegodisra.MainApplication { *; }
 
@@ -45,6 +44,28 @@
 -keep class com.facebook.animated.gif.** { *; }
 -keep class com.facebook.imagepipeline.animated.** { *; }
 -dontwarn com.facebook.animated.gif.**
+
+# --- AppsFlyer ---
+-keep class com.appsflyer.** { *; }
+-dontwarn com.appsflyer.**
+
+# --- Amplitude ---
+-keep class com.amplitude.** { *; }
+-dontwarn com.amplitude.**
+
+# --- react-native-webview ---
+-keep class com.reactnativecommunity.webview.** { *; }
+-dontwarn com.reactnativecommunity.webview.**
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+-keepclassmembers class * extends android.webkit.WebViewClient {
+    public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
+    public boolean *(android.webkit.WebView, java.lang.String);
+}
+-keepclassmembers class * extends android.webkit.WebChromeClient {
+    public void *(android.webkit.WebView, java.lang.String);
+}
 
 # --- AsyncStorage ---
 -keep class com.reactnativecommunity.asyncstorage.** { *; }
