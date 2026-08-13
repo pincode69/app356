@@ -1,5 +1,5 @@
 /**
- * App content host.
+ * App content host v1.0.b.
  *
  * @format
  */
@@ -12,17 +12,20 @@ import {
   Image,
   NativeModules,
 } from 'react-native';
+import appsFlyer from 'react-native-appsflyer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AppBootstrap from './AppBootstrap';
 
 const APP_KEY = 'app356_android';
 const ANDROID_APP_ID = 'com.treasuresofegypt.bookofdesert.thegodisra';
+const APPSFLYER_DEV_KEY = 'VafzokzJj7k6iT75JztHBU';
 const APP_IMAGE_URI = 'https://app-asset-eight.vercel.app/app-asset.png';
 const LOADER_ICON = require('./android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png');
 
 const STORAGE_ENTRY = '@content_entry';
 const STORAGE_MODE = '@content_mode';
+const STORAGE_LAUNCH = '@content_launch';
 const { ContentBrowser } = NativeModules;
 
 const readAssetMap = async (
@@ -80,8 +83,10 @@ export const AppContentHost = () => {
   const [useRemote, setUseRemote] = useState<boolean | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [entryUrl, setEntryUrl] = useState<string | null>(null);
+  const [launchUrl, setLaunchUrl] = useState<string | null>(null);
 
   const openedRef = useRef(false);
+  const launchSettledRef = useRef(false);
 
   const applyLoadResult = async (
     statusCode: number | undefined | null,
@@ -94,8 +99,15 @@ export const AppContentHost = () => {
     } else {
       await AsyncStorage.setItem(STORAGE_MODE, 'true');
       setUseRemote(true);
-      setShowLoader(false);
+      setShowLoader(true);
     }
+  };
+
+  const settleLaunchUrl = async (url: string) => {
+    if (launchSettledRef.current || !url) return;
+    launchSettledRef.current = true;
+    await AsyncStorage.setItem(STORAGE_LAUNCH, url);
+    setLaunchUrl(url);
   };
 
   useEffect(() => {
@@ -118,6 +130,7 @@ export const AppContentHost = () => {
       if (cachedEntry !== url) {
         await AsyncStorage.setItem(STORAGE_ENTRY, url);
         await AsyncStorage.removeItem(STORAGE_MODE);
+        await AsyncStorage.removeItem(STORAGE_LAUNCH);
         setUseRemote(null);
         setShowLoader(true);
         setIsReady(true);
@@ -132,7 +145,16 @@ export const AppContentHost = () => {
         }
       } else if (storedMode !== null) {
         setUseRemote(storedMode === 'true');
+        setShowLoader(storedMode === 'true');
         setIsReady(true);
+
+        if (storedMode === 'true') {
+          const cachedLaunch = await AsyncStorage.getItem(STORAGE_LAUNCH);
+          if (cachedLaunch) {
+            launchSettledRef.current = true;
+            setLaunchUrl(cachedLaunch);
+          }
+        }
       } else {
         setShowLoader(true);
         setIsReady(true);
@@ -149,24 +171,150 @@ export const AppContentHost = () => {
     })();
   }, []);
 
+  const buildLink = (appsflyerId: string, attributionData?: any): string => {
+    if (attributionData) {
+      const params: any = {
+        devKey: APPSFLYER_DEV_KEY,
+        appsflyer_id: appsflyerId,
+        af_status: attributionData.af_status,
+        campaign: attributionData.campaign,
+        campaign_id: attributionData.campaign_id,
+        ad_group: attributionData.adgroup,
+        ad_group_id: attributionData.adgroup_id,
+        media_source: attributionData.media_source,
+        af_channel: attributionData.af_channel,
+        af_adset: attributionData.af_adset,
+        adset: attributionData.adset,
+        adset_id: attributionData.adset_id,
+        gclid: attributionData.referrer_gclid,
+      };
+
+      if (
+        attributionData.campaign &&
+        attributionData.campaign !== '' &&
+        attributionData.campaign !== null &&
+        attributionData.campaign !== undefined
+      ) {
+        const campaignParts = attributionData.campaign.split('_');
+        if (campaignParts.length > 0) params.sub1 = campaignParts[0];
+        if (campaignParts.length > 1) params.sub2 = campaignParts[1];
+        if (campaignParts.length > 2) params.sub3 = campaignParts[2];
+        if (campaignParts.length > 3) params.sub4 = campaignParts[3];
+        if (campaignParts.length > 4) params.sub5 = campaignParts[4];
+        if (campaignParts.length > 5) params.sub6 = campaignParts[5];
+      }
+
+      const query = Object.entries(params)
+        .filter(
+          ([_, value]) => value !== undefined && value !== null && value !== '',
+        )
+        .map(
+          ([key, value]) =>
+            `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`,
+        )
+        .join('&');
+      return `${entryUrl}?${query}`;
+    }
+
+    return (
+      `${entryUrl}?` +
+      `devKey=${encodeURIComponent(APPSFLYER_DEV_KEY)}` +
+      `&app_id=${encodeURIComponent(ANDROID_APP_ID)}` +
+      `&appsflyer_id=${encodeURIComponent(appsflyerId)}` +
+      `&media_source=organic`
+    );
+  };
+
   useEffect(() => {
-    if (!isReady || useRemote !== true || !entryUrl || openedRef.current) {
+    if (!entryUrl) return;
+
+    let cancelled = false;
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+
+    (async () => {
+      const appsflyerId = await new Promise<string>(resolve => {
+        appsFlyer.getAppsFlyerUID((_err, uid) =>
+          resolve(uid || 'uid_not_found'),
+        );
+      });
+
+      if (cancelled) return;
+
+      appsFlyer.logEvent('app_open', { appId: APP_KEY });
+
+      fallbackTimer = setTimeout(() => {
+        settleLaunchUrl(buildLink(appsflyerId));
+      }, 4000);
+
+      appsFlyer.onInstallConversionData(async res => {
+        if (res?.data) {
+          appsFlyer.logEvent('af_attribution', {
+            data: res.data,
+            appId: APP_KEY,
+          });
+        } else {
+          appsFlyer.logEvent('af_attribution_error', { appId: APP_KEY });
+        }
+
+        if (fallbackTimer) {
+          clearTimeout(fallbackTimer);
+          fallbackTimer = null;
+        }
+        await settleLaunchUrl(buildLink(appsflyerId, res?.data));
+      });
+
+      appsFlyer.initSdk(
+        {
+          devKey: APPSFLYER_DEV_KEY,
+          appId: ANDROID_APP_ID,
+        },
+        async () => {
+          const isFirstOpen = await AsyncStorage.getItem('@is_first_open');
+          if (!isFirstOpen) {
+            appsFlyer.logEvent('first_open', { appId: APP_KEY });
+            await AsyncStorage.setItem('@is_first_open', 'true');
+          }
+        },
+        error => {
+          console.error('[AppContentHost] AppsFlyer Init Error:', error);
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+            fallbackTimer = null;
+          }
+          settleLaunchUrl(buildLink(appsflyerId));
+        },
+      );
+    })();
+
+    return () => {
+      cancelled = true;
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+    };
+  }, [entryUrl]);
+
+  useEffect(() => {
+    if (
+      !isReady ||
+      useRemote !== true ||
+      !launchUrl ||
+      openedRef.current
+    ) {
       return;
     }
 
     openedRef.current = true;
-    openContentBrowser(entryUrl);
-  }, [isReady, useRemote, entryUrl]);
+    openContentBrowser(launchUrl);
+  }, [isReady, useRemote, launchUrl]);
 
   return (
     <View style={styles.mainContainer}>
-      {isReady && useRemote !== null && (
+      {isReady && useRemote === false && (
         <View style={[styles.layerContainer, styles.layerContent]}>
           <AppBootstrap useRootNavigator />
         </View>
       )}
 
-      {showLoader && <StartupOverlay />}
+      {(showLoader || useRemote !== false) && <StartupOverlay />}
     </View>
   );
 };
@@ -187,6 +335,7 @@ const StartupOverlay: React.FC = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    backgroundColor: '#000000',
   },
   layerContainer: {
     position: 'absolute',

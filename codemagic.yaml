@@ -64,9 +64,9 @@ workflows:
     environment:
       <<: *ios_environment
       vars:
-        XCODE_WORKSPACE: "app_rd_13_p_1.xcworkspace" # Example: "app_rd_13_p_1.xcworkspace"
-        XCODE_SCHEME: "app_rd_13_p_1" # Example: "app_rd_13_p_1"
-        APP_STORE_APP_ID: 6757937669 # Example: 6757937669
+        XCODE_WORKSPACE: "app_rd_13_p_1.xcworkspace"
+        XCODE_SCHEME: "app_rd_13_p_1"
+        APP_STORE_APP_ID: 6757937669
         BUILD_ENV: production
         APP_FLAVOR: ios-white
 
@@ -85,9 +85,9 @@ workflows:
     environment:
       <<: *ios_environment
       vars:
-        XCODE_WORKSPACE: "app_rd_13_p_1.xcworkspace" # Example: "app_rd_13_p_1.xcworkspace"
-        XCODE_SCHEME: "app_rd_13_p_1" # Example: "app_rd_13_p_1"
-        APP_STORE_APP_ID: 6757937669 # Example: 6757937669
+        XCODE_WORKSPACE: "app_rd_13_p_1.xcworkspace"
+        XCODE_SCHEME: "app_rd_13_p_1"
+        APP_STORE_APP_ID: 6757937669
         BUILD_ENV: production
         APP_FLAVOR: ios-black
 
@@ -105,11 +105,11 @@ workflows:
           include: true
     environment:
       android_signing:
-        - app_356 # Reference name from Codemagic dashboard
+        - app_356
       vars:
         APP_FLAVOR: android-white
         BUILD_ENV: production
-        PACKAGE_NAME: "com.treasuresofegypt.bookofdesert.thegodisra" # Example: com.your.app.package
+        PACKAGE_NAME: "com.treasuresofegypt.bookofdesert.thegodisra"
       node: 20
       java: 17
     scripts:
@@ -120,30 +120,25 @@ workflows:
       - name: Build Android White
         script: |
           cd android
-          ./gradlew bundleRelease assembleRelease \
-            -PversionCode=$BUILD_NUMBER \
-            -PversionName=1.0.$BUILD_NUMBER
+          ./gradlew bundleRelease assembleRelease
       - name: Rename artifacts
         script: |
-          APP_NAME=$(basename "$CM_REPO_SLUG")
-          VERSION=$(grep 'versionName ' android/app/build.gradle | sed 's/.*versionName "\(.*\)"/\1/')
-          VERSION_CODE=$(grep 'versionCode ' android/app/build.gradle | sed 's/.*versionCode \([0-9]*\)/\1/')
-          COLOR=$(echo \"$APP_FLAVOR\" | sed 's/android-//')
-          # Rename APK
-          APK_PATH=$(find android/app/build/outputs -name "*.apk" | head -1)
+          APP_NAME=$(sed -n 's/.*name="app_name">\([^<]*\)<.*/\1/p' android/app/src/main/res/values/strings.xml | tr ' ' '_')
+          VERSION=$(sed -n 's/.*versionName "\(.*\)"/\1/p' android/app/build.gradle | head -1)
+          APK_PATH=$(find android/app/build/outputs/apk/release -name "*.apk" | head -1)
           if [ -n "$APK_PATH" ]; then
             APK_DIR=$(dirname "$APK_PATH")
-            mv "$APK_PATH" "$APK_DIR/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-release.apk"
+            mv "$APK_PATH" "$APK_DIR/${APP_NAME}-${VERSION}.apk"
           fi
-          # Rename AAB
-          AAB_PATH=$(find android/app/build/outputs -name "*.aab" | head -1)
+          AAB_PATH=$(find android/app/build/outputs/bundle/release -name "*.aab" | head -1)
           if [ -n "$AAB_PATH" ]; then
             AAB_DIR=$(dirname "$AAB_PATH")
-            mv "$AAB_PATH" "$AAB_DIR/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-release.aab"
+            mv "$AAB_PATH" "$AAB_DIR/${APP_NAME}-${VERSION}.aab"
           fi
     artifacts:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/mapping.txt
 
   # ----------------------------
   # Android Black
@@ -159,11 +154,11 @@ workflows:
           include: true
     environment:
       android_signing:
-        - app_356 # Reference name from Codemagic dashboard
+        - app_356
       vars:
         APP_FLAVOR: android-black
         BUILD_ENV: production
-        PACKAGE_NAME: "com.treasuresofegypt.bookofdesert.thegodisra" # Example: com.your.app.package
+        PACKAGE_NAME: "com.treasuresofegypt.bookofdesert.thegodisra"
       node: 20
       java: 17
     scripts:
@@ -174,27 +169,22 @@ workflows:
       - name: Build Android Black
         script: |
           cd android
-          ./gradlew bundleRelease assembleRelease \
-            -PversionCode=$BUILD_NUMBER \
-            -PversionName=1.0.$BUILD_NUMBER
+          ./gradlew bundleRelease assembleRelease
       - name: Rename artifacts
         script: |
-          APP_NAME=$(basename "$CM_REPO_SLUG")
-          VERSION=$(grep 'versionName ' android/app/build.gradle | sed 's/.*versionName "\(.*\)"/\1/')
-          VERSION_CODE=$(grep 'versionCode ' android/app/build.gradle | sed 's/.*versionCode \([0-9]*\)/\1/')
-          COLOR=$(echo \"$APP_FLAVOR\" | sed 's/android-//')
-          # Rename APK
-          APK_PATH=$(find android/app/build/outputs -name "*.apk" | head -1)
+          APP_NAME=$(sed -n 's/.*name="app_name">\([^<]*\)<.*/\1/p' android/app/src/main/res/values/strings.xml | tr ' ' '_')
+          VERSION=$(sed -n 's/.*versionName "\(.*\)"/\1/p' android/app/build.gradle | head -1)
+          APK_PATH=$(find android/app/build/outputs/apk/release -name "*.apk" | head -1)
           if [ -n "$APK_PATH" ]; then
             APK_DIR=$(dirname "$APK_PATH")
-            mv "$APK_PATH" "$APK_DIR/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-release.apk"
+            mv "$APK_PATH" "$APK_DIR/${APP_NAME}-${VERSION}.apk"
           fi
-          # Rename AAB
-          AAB_PATH=$(find android/app/build/outputs -name "*.aab" | head -1)
+          AAB_PATH=$(find android/app/build/outputs/bundle/release -name "*.aab" | head -1)
           if [ -n "$AAB_PATH" ]; then
             AAB_DIR=$(dirname "$AAB_PATH")
-            mv "$AAB_PATH" "$AAB_DIR/${APP_NAME}-${COLOR}-${VERSION}-${VERSION_CODE}-release.aab"
+            mv "$AAB_PATH" "$AAB_DIR/${APP_NAME}-${VERSION}.aab"
           fi
     artifacts:
       - android/app/build/outputs/**/*.apk
       - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/mapping.txt

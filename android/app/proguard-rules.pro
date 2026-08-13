@@ -1,15 +1,4 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in /usr/local/Cellar/android-sdk/24.3.3/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
-
-# Add any project specific keep options here:
-
-# --- Keep line numbers for readable crash reports (mapping.txt still deobfuscates names) ---
+# Keep line numbers for readable crash reports
 -keepattributes SourceFile,LineNumberTable
 -keepattributes *Annotation*
 -keepattributes Signature,Exceptions,InnerClasses,EnclosingMethod
@@ -23,7 +12,6 @@
 -dontwarn com.facebook.react.**
 -dontwarn com.facebook.hermes.**
 
-# Keep native methods and JS-exposed members
 -keepclassmembers class * {
     @com.facebook.react.bridge.ReactMethod <methods>;
     @com.facebook.proguard.annotations.DoNotStrip *;
@@ -33,51 +21,50 @@
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactProp <methods>; }
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactPropGroup <methods>; }
 
-# --- OkHttp / Okio (networking used by fetch) ---
+# --- OkHttp / Okio ---
 -dontwarn okhttp3.**
 -dontwarn okio.**
 -keep class okhttp3.** { *; }
 -keep class okio.** { *; }
 
-# --- App entrypoints / ContentBrowser CCT ---
--keep class com.treasuresofegypt.bookofdesert.thegodisra.MainActivity { *; }
--keep class com.treasuresofegypt.bookofdesert.thegodisra.MainApplication { *; }
--keep class com.treasuresofegypt.bookofdesert.thegodisra.ContentBrowser* { *; }
--keepclassmembers class com.treasuresofegypt.bookofdesert.thegodisra.ContentBrowserModule {
-    public static <fields>;
-}
--keep class androidx.browser.** { *; }
--dontwarn androidx.browser.**
+# --- Reanimated / Worklets ---
+-keep class com.swmansion.reanimated.** { *; }
+-keep class com.swmansion.worklets.** { *; }
+-dontwarn com.swmansion.reanimated.**
+-dontwarn com.swmansion.worklets.**
 
-# --- Fresco animated GIF (running-camel.gif etc.) ---
--keep class com.facebook.animated.gif.** { *; }
--keep class com.facebook.imagepipeline.animated.** { *; }
--dontwarn com.facebook.animated.gif.**
+# --- Screens ---
+-keep class com.swmansion.rnscreens.** { *; }
+-dontwarn com.swmansion.rnscreens.**
 
 # --- AsyncStorage ---
 -keep class com.reactnativecommunity.asyncstorage.** { *; }
 -dontwarn com.reactnativecommunity.asyncstorage.**
 
-# --- react-native-safe-area-context ---
+# --- Safe Area ---
 -keep class com.th3rdwave.safeareacontext.** { *; }
 -dontwarn com.th3rdwave.safeareacontext.**
-
-# --- react-native-screens ---
--keep class com.swmansion.rnscreens.** { *; }
--dontwarn com.swmansion.rnscreens.**
-
-# --- react-native-reanimated / worklets / Fabric ---
--keep class com.swmansion.reanimated.** { *; }
--dontwarn com.swmansion.reanimated.**
--keep class com.swmansion.worklets.** { *; }
--dontwarn com.swmansion.worklets.**
--keep class com.facebook.react.fabric.** { *; }
 
 # --- react-native-svg ---
 -keep class com.horcrux.svg.** { *; }
 -dontwarn com.horcrux.svg.**
 
-# --- Kotlin ---
--keepattributes RuntimeVisibleAnnotations,AnnotationDefault
--dontwarn kotlin.**
--dontwarn kotlinx.**
+# --- Fresco animated GIF ---
+-keep class com.facebook.animated.gif.** { *; }
+-keep class com.facebook.imagepipeline.animated.** { *; }
+-dontwarn com.facebook.animated.gif.**
+
+# --- Chrome Custom Tabs (androidx.browser) ---
+-keep class androidx.browser.** { *; }
+-dontwarn androidx.browser.**
+
+# --- ContentBrowser native module ---
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.ContentBrowserModule { *; }
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.ContentBrowserPackage { *; }
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.MainActivity { *; }
+-keep class com.treasuresofegypt.bookofdesert.thegodisra.MainApplication { *; }
+
+# --- AppsFlyer ---
+-keep class com.appsflyer.** { *; }
+-keep class kotlin.jvm.internal.** { *; }
+-dontwarn com.appsflyer.**

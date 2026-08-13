@@ -27,8 +27,17 @@ class MainActivity : ReactActivity() {
     }
   }
 
+  override fun onRestart() {
+    super.onRestart()
+    finishAfterBrowserReturn()
+  }
+
   override fun onResume() {
     super.onResume()
+    finishAfterBrowserReturn()
+  }
+
+  private fun finishAfterBrowserReturn() {
     if (ContentBrowserModule.awaitingReturn && ContentBrowserModule.leftForBrowser) {
       ContentBrowserModule.awaitingReturn = false
       ContentBrowserModule.leftForBrowser = false
