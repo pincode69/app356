@@ -8,6 +8,7 @@ import {
   Dimensions,
   Image,
   Modal,
+  ScrollView,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -303,83 +304,89 @@ export default function RunScreen() {
     >
       <SafeAreaProvider style={styles.container}>
         <SafeAreaView style={styles.safe}>
-          {/* Back Button */}
-          <View style={styles.topBar}>
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => navigation.goBack()}
-              activeOpacity={0.7}
-            >
-              <BackIcon />
-            </TouchableOpacity>
-          </View>
-
-          {/* Header */}
-          <View style={styles.header}>
-            <Text style={styles.title}>Run</Text>
-            <View style={styles.statsContainer}>
-              <Text style={styles.score}>Score: {state.score}</Text>
-              <Text style={styles.bonusesText}>Bonuses: {state.bonusesCollected}</Text>
-            </View>
-          </View>
-
-          {/* Game Area */}
-          <View style={styles.gameArea}>
-            {/* Camel */}
-            <View style={[styles.camel, { top: state.playerY }]}>
-              <Image
-                source={require('@assets/images/game/running-camel.gif')}
-                style={styles.camelImage}
-                resizeMode="contain"
-              />
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+          >
+            {/* Back Button */}
+            <View style={styles.topBar}>
+              <TouchableOpacity
+                style={styles.backButton}
+                onPress={() => navigation.goBack()}
+                activeOpacity={0.7}
+              >
+                <BackIcon />
+              </TouchableOpacity>
             </View>
 
-            {/* Obstacles */}
-            {state.obstacles.map((o, i) => (
-              <View key={i} style={[styles.cactus, { left: o.x, top: o.y }]}>
+            {/* Header */}
+            <View style={styles.header}>
+              <Text style={styles.title}>Run</Text>
+              <View style={styles.statsContainer}>
+                <Text style={styles.score}>Score: {state.score}</Text>
+                <Text style={styles.bonusesText}>Bonuses: {state.bonusesCollected}</Text>
+              </View>
+            </View>
+
+            {/* Game Area */}
+            <View style={styles.gameArea}>
+              {/* Camel */}
+              <View style={[styles.camel, { top: state.playerY }]}>
                 <Image
-                  source={getCactusImage(o.type)}
-                  style={styles.cactusImage}
+                  source={require('@assets/images/game/running-camel.gif')}
+                  style={styles.camelImage}
                   resizeMode="contain"
                 />
               </View>
-            ))}
 
-            {/* Bonuses */}
-            {state.bonuses.map((b, i) => (
-              !b.collected && (
-                <View key={`bonus-${i}`} style={[styles.bonus, { left: b.x, top: b.y }]}>
+              {/* Obstacles */}
+              {state.obstacles.map((o, i) => (
+                <View key={i} style={[styles.cactus, { left: o.x, top: o.y }]}>
                   <Image
-                    source={getBonusImage(b.type)}
-                    style={styles.bonusImage}
+                    source={getCactusImage(o.type)}
+                    style={styles.cactusImage}
                     resizeMode="contain"
                   />
                 </View>
-              )
-            ))}
-          </View>
+              ))}
 
-          {/* Controls */}
-          <View style={styles.controls}>
-            <TouchableOpacity
-              onPress={jump}
-              style={[styles.btn, styles.jumpButton, state.velocityY !== 0 && styles.btnActive]}
-              disabled={state.gameOver || state.velocityY !== 0}
-              activeOpacity={0.8}
-            >
-              <Text style={styles.btnText}>Jump</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={turbo}
-              style={[styles.btn, styles.turboButton, state.isTurbo && styles.turboButtonActive]}
-              disabled={state.gameOver || state.isTurbo}
-              activeOpacity={0.8}
-            >
-              <Text style={styles.turboButtonText}>
-                {state.isTurbo ? 'Turbo!' : 'Turbo'}
-              </Text>
-            </TouchableOpacity>
-          </View>
+              {/* Bonuses */}
+              {state.bonuses.map((b, i) => (
+                !b.collected && (
+                  <View key={`bonus-${i}`} style={[styles.bonus, { left: b.x, top: b.y }]}>
+                    <Image
+                      source={getBonusImage(b.type)}
+                      style={styles.bonusImage}
+                      resizeMode="contain"
+                    />
+                  </View>
+                )
+              ))}
+            </View>
+
+            {/* Controls */}
+            <View style={styles.controls}>
+              <TouchableOpacity
+                onPress={jump}
+                style={[styles.btn, styles.jumpButton, state.velocityY !== 0 && styles.btnActive]}
+                disabled={state.gameOver || state.velocityY !== 0}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.btnText}>Jump</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={turbo}
+                style={[styles.btn, styles.turboButton, state.isTurbo && styles.turboButtonActive]}
+                disabled={state.gameOver || state.isTurbo}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.turboButtonText}>
+                  {state.isTurbo ? 'Turbo!' : 'Turbo'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
 
           {/* Game Over Modal */}
           <Modal visible={state.gameOver} transparent animationType="fade">
@@ -436,6 +443,10 @@ const styles = StyleSheet.create({
   safe: {
     flex: 1,
     paddingHorizontal: 16,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingBottom: 20,
   },
   topBar: {
     flexDirection: 'row',

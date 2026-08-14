@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Animated,
   Image,
+  ScrollView,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -113,67 +114,72 @@ export default function MainMenuScreen() {
     >
       <SafeAreaProvider style={styles.container}>
         <SafeAreaView style={styles.safeContainer}>
-          {/* Top Bar */}
-          <View style={styles.topBar}>
-            <TouchableOpacity
-              style={styles.infoButton}
-              onPress={() => navigation.navigate('about')}
-              activeOpacity={0.7}
-            >
-              <Text style={styles.infoButtonText}>i</Text>
-            </TouchableOpacity>
-            <CoinDisplay coins={coins} style={styles.coinDisplay} />
-          </View>
-
-          <View style={styles.content}>
-            {/* HEADER */}
-            <View style={styles.header}>
-              <Text style={styles.title}>TREASURES OF EGYPT</Text>
-              <Text style={styles.subtitle}>Desert Adventure</Text>
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+          >
+            {/* Top Bar */}
+            <View style={styles.topBar}>
+              <TouchableOpacity
+                style={styles.infoButton}
+                onPress={() => navigation.navigate('about')}
+                activeOpacity={0.7}
+              >
+                <Text style={styles.infoButtonText}>i</Text>
+              </TouchableOpacity>
+              <CoinDisplay coins={coins} style={styles.coinDisplay} />
             </View>
 
-            {/* MENU */}
-            <View style={styles.menuContainer}>
-              {showBonusRun && (
-                <Animated.View
-                  style={[
-                    styles.menuButton,
-                    styles.bonusButton,
-                    {
-                      transform: [{ scale: bonusScale }],
-                      opacity: bonusGlow,
-                    },
-                  ]}
-                >
-                  <TouchableOpacity
-                    activeOpacity={0.88}
-                    onPress={handleBonusRun}
-                    style={styles.bonusButtonInner}
+            <View style={styles.content}>
+              {/* HEADER */}
+              <View style={styles.header}>
+                <Text style={styles.title}>TREASURES OF EGYPT</Text>
+                <Text style={styles.subtitle}>Desert Adventure</Text>
+              </View>
+
+              {/* MENU */}
+              <View style={styles.menuContainer}>
+                {showBonusRun && (
+                  <Animated.View
+                    style={[
+                      styles.menuButton,
+                      styles.bonusButton,
+                      {
+                        transform: [{ scale: bonusScale }],
+                        opacity: bonusGlow,
+                      },
+                    ]}
                   >
-                    <Text style={[styles.menuButtonText, styles.bonusButtonText]}>
-                      Bonus Run
-                    </Text>
-                  </TouchableOpacity>
-                </Animated.View>
-              )}
+                    <TouchableOpacity
+                      activeOpacity={0.88}
+                      onPress={handleBonusRun}
+                      style={styles.bonusButtonInner}
+                    >
+                      <Text style={[styles.menuButtonText, styles.bonusButtonText]}>
+                        Bonus Run
+                      </Text>
+                    </TouchableOpacity>
+                  </Animated.View>
+                )}
 
-              <MenuButton
-                title="Run"
-                image={require('@assets/images/design-icon-1.png')}
-                onPress={() => navigation.navigate('run')}
-              />
-              <MenuButton
-                title="Discovery"
-                image={require('@assets/images/design-icon-2.png')}
-                onPress={() => navigation.navigate('discovery')}
-              />
-              <MenuButton
-                title="Settings"
-                image={require('@assets/images/design-icon-3.png')}
-                onPress={() => navigation.navigate('settings')}
-              />
+                <MenuButton
+                  title="Run"
+                  image={require('@assets/images/design-icon-1.png')}
+                  onPress={() => navigation.navigate('run')}
+                />
+                <MenuButton
+                  title="Discovery"
+                  image={require('@assets/images/design-icon-2.png')}
+                  onPress={() => navigation.navigate('discovery')}
+                />
+                <MenuButton
+                  title="Settings"
+                  image={require('@assets/images/design-icon-3.png')}
+                  onPress={() => navigation.navigate('settings')}
+                />
+              </View>
             </View>
-          </View>
+          </ScrollView>
         </SafeAreaView>
       </SafeAreaProvider>
     </ImageBackground>
@@ -211,6 +217,9 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     paddingHorizontal: 16,
+  },
+  scrollContent: {
+    flexGrow: 1,
   },
   topBar: {
     flexDirection: 'row',

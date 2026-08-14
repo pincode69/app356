@@ -13,9 +13,9 @@
 -dontwarn com.facebook.hermes.**
 
 -keepclassmembers class * {
-    @com.facebook.react.bridge.ReactMethod <methods>;
     @com.facebook.proguard.annotations.DoNotStrip *;
     @com.facebook.common.internal.DoNotStrip *;
+    @com.facebook.react.bridge.ReactMethod <methods>;
     native <methods>;
 }
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactProp <methods>; }
@@ -26,10 +26,6 @@
 -dontwarn okio.**
 -keep class okhttp3.** { *; }
 -keep class okio.** { *; }
-
-# --- App entrypoints ---
--keep class com.treasuresofegypt.bookofdesert.thegodisra.MainActivity { *; }
--keep class com.treasuresofegypt.bookofdesert.thegodisra.MainApplication { *; }
 
 # --- Reanimated / Worklets ---
 -keep class com.swmansion.reanimated.** { *; }
@@ -51,11 +47,11 @@
 -keep class com.th3rdwave.safeareacontext.** { *; }
 -dontwarn com.th3rdwave.safeareacontext.**
 
-# --- react-native-svg ---
+# --- react-native-svg (BackIcon) ---
 -keep class com.horcrux.svg.** { *; }
 -dontwarn com.horcrux.svg.**
 
-# --- Fresco animated GIF ---
+# --- Fresco animated GIF (camel) ---
 -keep class com.facebook.animated.gif.** { *; }
 -keep class com.facebook.imagepipeline.animated.** { *; }
 -dontwarn com.facebook.animated.gif.**

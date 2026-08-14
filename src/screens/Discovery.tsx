@@ -4,9 +4,9 @@ import {
   Text,
   StyleSheet,
   ImageBackground,
-  FlatList,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
@@ -63,112 +63,106 @@ export default function DiscoveryScreen() {
     >
       <SafeAreaProvider style={styles.container}>
         <SafeAreaView style={styles.safeContainer}>
-          {/* Header with back button */}
-          <View style={styles.topBar}>
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => navigation.goBack()}
-              activeOpacity={0.7}
-            >
-              <BackIcon />
-            </TouchableOpacity>
-            <CoinDisplay coins={coins} style={styles.coinContainer} />
-          </View>
-
-          {/* Title */}
-          <View style={styles.header}>
-            <Text style={styles.title}>TREASURE ROOM</Text>
-          </View>
-
-          {/* Description */}
-          <View style={styles.descriptionContainer}>
-            <Text style={styles.descriptionText}>
-              The ancient chamber of treasures. Unlock all 24 artifacts to open the doors to all knowledge of the universe. Each discovery brings you closer to the ultimate wisdom of the pharaohs.
-            </Text>
-          </View>
-
-          {/* Treasures Grid */}
-          <FlatList
-            data={treasures}
-            extraData={coins}
-            keyExtractor={(item) => item.id.toString()}
-            numColumns={2}
-            columnWrapperStyle={styles.columnWrapper}
-            contentContainerStyle={styles.listContent}
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item }) => {
-              const isPurchased = isTreasurePurchased(item.id);
-              const canAfford = !isPurchased && coins >= item.price;
+          >
+            <View style={styles.topBar}>
+              <TouchableOpacity
+                style={styles.backButton}
+                onPress={() => navigation.goBack()}
+                activeOpacity={0.7}
+              >
+                <BackIcon />
+              </TouchableOpacity>
+              <CoinDisplay coins={coins} style={styles.coinContainer} />
+            </View>
 
-              return (
-                <View style={styles.card}>
-                  <TouchableOpacity
-                    style={[
-                      styles.itemBtn,
-                      isPurchased && styles.itemBtnPurchased,
-                    ]}
-                    onPress={() => handleTreasurePress(item)}
-                    activeOpacity={0.8}
-                  >
-                    {isPurchased ? (
-                      <View style={styles.treasureContainer}>
-                        <Image
-                          source={item.image}
-                          style={styles.treasureImage}
-                          resizeMode="contain"
-                        />
-                        <Text style={styles.treasureName} numberOfLines={1}>
-                          {item.name}
-                        </Text>
-                      </View>
-                    ) : (
-                      <View style={styles.lockedContainer}>
-                        <View style={styles.questionMarkContainer}>
-                          <Text style={styles.questionMark}>?</Text>
-                        </View>
-                        <View style={styles.priceContainer}>
-                          <Image
-                            source={require('@assets/images/coin.png')}
-                            style={styles.coinIcon}
-                            resizeMode="contain"
-                          />
-                          <Text
-                            style={[
-                              styles.priceText,
-                              !canAfford && styles.priceTextDisabled,
-                            ]}
-                          >
-                            {item.price}
-                          </Text>
-                        </View>
-                      </View>
-                    )}
-                  </TouchableOpacity>
+            <View style={styles.header}>
+              <Text style={styles.title}>TREASURE ROOM</Text>
+            </View>
 
-                  {!isPurchased && (
+            <View style={styles.descriptionContainer}>
+              <Text style={styles.descriptionText}>
+                The ancient chamber of treasures. Unlock all 24 artifacts to open the doors to all knowledge of the universe. Each discovery brings you closer to the ultimate wisdom of the pharaohs.
+              </Text>
+            </View>
+
+            <View style={styles.grid}>
+              {treasures.map(item => {
+                const isPurchased = isTreasurePurchased(item.id);
+                const canAfford = !isPurchased && coins >= item.price;
+
+                return (
+                  <View key={item.id} style={styles.card}>
                     <TouchableOpacity
                       style={[
-                        styles.buyButton,
-                        !canAfford && styles.buyButtonDisabled,
+                        styles.itemBtn,
+                        isPurchased && styles.itemBtnPurchased,
                       ]}
-                      onPress={() => handlePurchase(item)}
-                      disabled={!canAfford}
-                      activeOpacity={0.7}
+                      onPress={() => handleTreasurePress(item)}
+                      activeOpacity={0.8}
                     >
-                      <Text
-                        style={[
-                          styles.buyButtonText,
-                          !canAfford && styles.buyButtonTextDisabled,
-                        ]}
-                      >
-                        Buy
-                      </Text>
+                      {isPurchased ? (
+                        <View style={styles.treasureContainer}>
+                          <Image
+                            source={item.image}
+                            style={styles.treasureImage}
+                            resizeMode="contain"
+                          />
+                          <Text style={styles.treasureName} numberOfLines={1}>
+                            {item.name}
+                          </Text>
+                        </View>
+                      ) : (
+                        <View style={styles.lockedContainer}>
+                          <View style={styles.questionMarkContainer}>
+                            <Text style={styles.questionMark}>?</Text>
+                          </View>
+                          <View style={styles.priceContainer}>
+                            <Image
+                              source={require('@assets/images/coin.png')}
+                              style={styles.coinIcon}
+                              resizeMode="contain"
+                            />
+                            <Text
+                              style={[
+                                styles.priceText,
+                                !canAfford && styles.priceTextDisabled,
+                              ]}
+                            >
+                              {item.price}
+                            </Text>
+                          </View>
+                        </View>
+                      )}
                     </TouchableOpacity>
-                  )}
-                </View>
-              );
-            }}
-          />
+
+                    {!isPurchased && (
+                      <TouchableOpacity
+                        style={[
+                          styles.buyButton,
+                          !canAfford && styles.buyButtonDisabled,
+                        ]}
+                        onPress={() => handlePurchase(item)}
+                        disabled={!canAfford}
+                        activeOpacity={0.7}
+                      >
+                        <Text
+                          style={[
+                            styles.buyButtonText,
+                            !canAfford && styles.buyButtonTextDisabled,
+                          ]}
+                        >
+                          Buy
+                        </Text>
+                      </TouchableOpacity>
+                    )}
+                  </View>
+                );
+              })}
+            </View>
+          </ScrollView>
 
           {selectedTreasure && (
             <TreasureInfoModal
@@ -194,6 +188,10 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 16,
   },
+  scrollContent: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
   topBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -206,7 +204,6 @@ const styles = StyleSheet.create({
     width: 44,
     height: 38,
   },
-
   coinContainer: {
     marginRight: 0,
   },
@@ -243,17 +240,16 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
-  listContent: {
-    paddingBottom: 20,
-  },
-  columnWrapper: {
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginBottom: 16,
   },
   card: {
     width: '48%',
     backgroundColor: 'transparent',
     position: 'relative',
+    marginBottom: 16,
   },
   itemBtn: {
     padding: 12,
@@ -282,7 +278,7 @@ const styles = StyleSheet.create({
   },
   treasureName: {
     fontSize: 14,
-    fontFamily: 'Knewave-Regular',
+    fontFamily: 'Knewave',
     color: '#FFE777',
     textAlign: 'center',
     textShadowColor: 'rgba(0, 0, 0, 0.7)',
@@ -310,8 +306,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     width: '100%',
     textAlign: 'center',
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: 'white',
   },
   priceContainer: {
@@ -325,8 +320,7 @@ const styles = StyleSheet.create({
   },
   priceText: {
     fontSize: 18,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
     color: '#FFE777',
   },
   priceTextDisabled: {
@@ -349,8 +343,7 @@ const styles = StyleSheet.create({
   buyButtonText: {
     color: '#8B4513',
     fontSize: 14,
-    fontFamily: 'Knewave-Regular',
-    fontWeight: 'bold',
+    fontFamily: 'Knewave',
   },
   buyButtonTextDisabled: {
     color: '#CCCCCC',
