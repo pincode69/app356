@@ -63,31 +63,6 @@ export default function DiscoveryScreen() {
     >
       <SafeAreaProvider style={styles.container}>
         <SafeAreaView style={styles.safeContainer}>
-          {/* Header with back button */}
-          <View style={styles.topBar}>
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => navigation.goBack()}
-              activeOpacity={0.7}
-            >
-              <BackIcon />
-            </TouchableOpacity>
-            <CoinDisplay coins={coins} style={styles.coinContainer} />
-          </View>
-
-          {/* Title */}
-          <View style={styles.header}>
-            <Text style={styles.title}>TREASURE ROOM</Text>
-          </View>
-
-          {/* Description */}
-          <View style={styles.descriptionContainer}>
-            <Text style={styles.descriptionText}>
-              The ancient chamber of treasures. Unlock all 24 artifacts to open the doors to all knowledge of the universe. Each discovery brings you closer to the ultimate wisdom of the pharaohs.
-            </Text>
-          </View>
-
-          {/* Treasures Grid */}
           <FlatList
             data={treasures}
             extraData={coins}
@@ -96,6 +71,30 @@ export default function DiscoveryScreen() {
             columnWrapperStyle={styles.columnWrapper}
             contentContainerStyle={styles.listContent}
             showsVerticalScrollIndicator={false}
+            ListHeaderComponent={
+              <>
+                <View style={styles.topBar}>
+                  <TouchableOpacity
+                    style={styles.backButton}
+                    onPress={() => navigation.goBack()}
+                    activeOpacity={0.7}
+                  >
+                    <BackIcon />
+                  </TouchableOpacity>
+                  <CoinDisplay coins={coins} style={styles.coinContainer} />
+                </View>
+
+                <View style={styles.header}>
+                  <Text style={styles.title}>TREASURE ROOM</Text>
+                </View>
+
+                <View style={styles.descriptionContainer}>
+                  <Text style={styles.descriptionText}>
+                    The ancient chamber of treasures. Unlock all 24 artifacts to open the doors to all knowledge of the universe. Each discovery brings you closer to the ultimate wisdom of the pharaohs.
+                  </Text>
+                </View>
+              </>
+            }
             renderItem={({ item }) => {
               const isPurchased = isTreasurePurchased(item.id);
               const canAfford = !isPurchased && coins >= item.price;

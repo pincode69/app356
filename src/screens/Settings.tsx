@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Switch,
   Alert,
+  ScrollView
 } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -113,68 +114,76 @@ export default function SettingsScreen() {
     >
       <SafeAreaProvider style={styles.container}>
         <SafeAreaView style={styles.safeContainer}>
-          {/* ---------- Header ---------- */}
-          <View style={styles.topBar}>
-            <TouchableOpacity
-              style={styles.backButton}
-              onPress={() => navigation.goBack()}
-              activeOpacity={0.7}
-            >
-              <BackIcon />
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.header}>
-            <Text style={styles.title}>SETTINGS</Text>
-          </View>
-
-          {/* ---------- Content ---------- */}
-          {!isLoading && (
-            <View style={styles.content}>
-              {/* Audio */}
-              <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Audio</Text>
-
-                <SettingRow
-                  label="Music"
-                  description="Background music"
-                  value={musicEnabled}
-                  onChange={toggleMusic}
-                />
-
-                <SettingRow
-                  label="Sounds"
-                  description="Sound effects"
-                  value={soundsEnabled}
-                  onChange={toggleSounds}
-                />
-              </View>
-
-              {/* Device */}
-              <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Device</Text>
-
-                <SettingRow
-                  label="Vibration"
-                  description="Haptic feedback"
-                  value={vibrationEnabled}
-                  onChange={toggleVibration}
-                />
-              </View>
-
-              {/* Data */}
-              <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Data</Text>
-                <TouchableOpacity
-                  style={styles.dangerButton}
-                  activeOpacity={0.85}
-                  onPress={onResetProgress}
-                >
-                  <Text style={styles.dangerButtonText}>Reset Progress</Text>
-                </TouchableOpacity>
-              </View>
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+          >
+            {/* ---------- Header ---------- */}
+            <View style={styles.topBar}>
+              <TouchableOpacity
+                style={styles.backButton}
+                onPress={() => navigation.goBack()}
+                activeOpacity={0.7}
+              >
+                <BackIcon />
+              </TouchableOpacity>
             </View>
-          )}
+
+            <View style={styles.header}>
+              <Text style={styles.title}>SETTINGS</Text>
+            </View>
+
+            {/* ---------- Content ---------- */}
+            {!isLoading && (
+              <View style={styles.content}>
+                {/* Audio */}
+                <View style={styles.section}>
+                  <Text style={styles.sectionTitle}>Audio</Text>
+
+                  <SettingRow
+                    label="Music"
+                    description="Background music"
+                    value={musicEnabled}
+                    onChange={toggleMusic}
+                  />
+
+                  <SettingRow
+                    label="Sounds"
+                    description="Sound effects"
+                    value={soundsEnabled}
+                    onChange={toggleSounds}
+                  />
+                </View>
+
+                {/* Device */}
+                <View style={styles.section}>
+                  <Text style={styles.sectionTitle}>Device</Text>
+
+                  <SettingRow
+                    label="Vibration"
+                    description="Haptic feedback"
+                    value={vibrationEnabled}
+                    onChange={toggleVibration}
+                  />
+                </View>
+
+                {/* Data */}
+                <View style={styles.section}>
+                  <Text style={styles.sectionTitle}>Data</Text>
+                  <TouchableOpacity
+                    style={styles.dangerButton}
+                    activeOpacity={0.85}
+                    onPress={onResetProgress}
+                  >
+                    <Text style={styles.dangerButtonText}>Reset Progress</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
+          </ScrollView>
+          
+
+          
         </SafeAreaView>
       </SafeAreaProvider>
     </ImageBackground>
@@ -226,6 +235,10 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     paddingHorizontal: 16,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
   },
   topBar: {
     flexDirection: 'row',
